@@ -1,0 +1,43 @@
+apply plugin: 'java'
+
+group="com.github.frgomes"
+version = '1.1.4'
+
+sourceCompatibility = 1.5
+
+
+repositories {
+    mavenCentral()
+    url: "http://oss.sonatype.org/content/repositories/releases"
+    url: "http://oss.sonatype.org/content/repositories/snapshots"
+}
+
+dependencies {
+    // Compilation time dependencies
+    compile "dom4j:dom4j:1.6.1"
+    compile "jdom:jdom:1.0"
+    compile "xml-apis:xml-apis:1.3.02"
+    compile "xerces:xercesImpl:2.6.2"
+    compile "xom:xom:1.0"
+
+    testCompile "junit:junit:3.8.2"
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/java/main'
+        }
+        resources {
+            srcDir 'src/java/resources'
+        }
+    }
+    test {
+        java {
+            srcDir 'src/java/test'
+        }
+        resources {
+            srcDir 'src/java/test-resources'
+        }
+    }
+}
